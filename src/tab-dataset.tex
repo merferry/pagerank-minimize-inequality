@@ -1,0 +1,35 @@
+\begin{table}[!ht]
+\centering
+\caption{In our experiments, we use a list of 17 graphs. Each graph has its edges duplicated in the reverse direction to make them undirected, and a weight of 1 is assigned to each edge. The table lists the total number of vertices ($|V|$), total number of edges ($|E|$) after making the graph undirected, and the average degree of vertices ($D_{avg}$) for each graph. The number of vertices and edges are rounded to the nearest thousand or million, as appropriate.}
+\label{tab:dataset}
+\begin{tabular}{||c||c|c|c|c||}
+  \toprule
+  \textbf{Graph} &
+  \textbf{$|V|$} &
+  \textbf{$|E|$} &
+  \textbf{$D_{avg}$} \\
+  \midrule
+  \multicolumn{4}{|c|}{Web Graphs} \\ \hline
+    web-Stanford & 282K & 3.99M & 14.1 \\ \hline
+    web-BerkStan & 685K & 13.3M & 19.4 \\ \hline
+    web-Google & 916K & 8.64M & 9.43 \\ \hline
+    web-NotreDame & 326K & 2.21M & 6.78 \\ \hline
+    indochina-2004 & 7.41M & 304M & 41.0 \\ \hline
+    \multicolumn{4}{|c|}{Social Networks} \\ \hline
+    soc-Slashdot0811 & 77.4K & 1.02M & 13.2 \\ \hline
+    soc-Slashdot0902 & 82.2K & 1.09M & 13.3 \\ \hline
+    soc-Epinions1 & 75.9K & 811K & 10.7 \\ \hline
+    soc-LiveJournal1 & 4.85M & 86.2M & 17.8 \\ \hline
+    \multicolumn{4}{|c|}{Collaboration Networks} \\ \hline
+    coAuthorsDBLP & 299K & 1.96M & 6.56 \\ \hline
+    coAuthorsCiteseer & 227K & 1.63M & 7.18 \\ \hline
+    coPapersCiteseer & 434K & 32.1M & 74.0 \\ \hline
+    coPapersDBLP & 540K & 30.5M & 56.5 \\ \hline
+    \multicolumn{4}{|c|}{Road Networks} \\ \hline
+    italy\_osm & 6.69M & 14.0M & 2.09 \\ \hline
+    great-britain\_osm & 7.73M & 16.3M & 2.11 \\ \hline
+    germany\_osm & 11.5M & 24.7M & 2.15 \\ \hline
+    asia\_osm & 12.0M & 25.4M & 2.12 \\ \hline
+  \bottomrule
+\end{tabular}
+\end{table}

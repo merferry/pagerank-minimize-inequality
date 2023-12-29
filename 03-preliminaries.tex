@@ -1,0 +1,21 @@
+\subsection{PageRank}
+\label{sec:PageRank}
+
+Consider a directed graph $G(V, E, w)$, with $V$ ($n = |V|$) as the set of vertices and $E$ ($m = |E|$) as the set of edges. The PageRank $R[v]$ of a vertex $v \in V$ in this graph measures its importance based on incoming links and their significance. Equation \ref{eq:pr} defines the PageRank calculation for a vertex $v$ in $G$. $G.in(v)$ and $G.out(v)$ represent incoming and outgoing neighbors of $v$, and $\alpha$ is the damping factor (usually $0.85$). Initially, each vertex has a PageRank of $1/n$, and the \textit{power-iteration} method updates these values iteratively until they converge within a specified tolerance $\tau$, indicating that convergence has been achieved.
+
+\begin{equation}
+\label{eq:pr}
+    R[v] = \alpha \times \sum_{u \in G.in(v)} \frac{R[u]}{|G.out(u)|} + \frac{1 - \alpha}{n}
+\end{equation}
+
+
+
+
+\subsection{Gini coefficient}
+
+Gini coefficient $G$ is a value which represents income/wealth inequality within a nation or group. It ranges from $0$ to $1$, with $0$ representing total equality and $1$ representing total inequality. It is calculated from the Lorenz curve, which plots cumulative income/wealth against cumulative number of households/people. It is calculated using Equation \ref{eq:gini}, where $A$ is the area between the line of perfect equality and the Lorenz curve, and $B$ is the total area under the line of perfect equality.
+
+\begin{equation}
+\label{eq:gini}
+  G = \frac{A}{A+B}
+\end{equation}
