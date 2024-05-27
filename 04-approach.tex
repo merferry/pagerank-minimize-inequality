@@ -3,14 +3,6 @@ In the first experiment, we investigate the impact of three different dead-end h
 
 
 
-\subsection{Gini coefficient of PageRank values with different dead-end handling strategies}
-
-In this experiment we study the \textbf{Lorenz curve} and \textbf{Gini coefficient} of \textbf{PageRank values} on a number of graphs, and compare between PageRank values obtained with three different \textbf{dead-end handling strategies}: \textit{teleport from dead-ends} (\textbf{default}), \textit{self-loop dead-ends} (\textbf{loop}), and \textit{self-loop all vertices} (\textbf{loopall}). The PageRank values of vertices in each graph is obtained with \href{https://www.npmjs.com/package/nvgraph.sh}{\textit{nvgraph.sh}} \cite{sahu2021nvgraph}, which internally uses \href{https://docs.nvidia.com/cuda/archive/10.0/nvgraph/index.html#nvgraph-pagerank-example}{\textit{nvGraph PageRank}} \cite{nvidia2018nvgraph}. The Lorenz curve of ranks is obtained by sorting the ranks in ascending order and cumulatively summing them up to obtain $100$ samples. These $100$ samples are then compared with the ideal (total equality) Lorenz curve to obtain the Gini coefficient. Note that this is output into YAML files by \textit{nvgraph.sh} itself. This measurement process of Lorenz curve and Gini coefficient is repeated for \textit{loop} and \textit{loopall} variants of graphs, which are generated from the original graph using \href{https://github.com/puzzlef/graph-generate}{\textit{graph-generate}} \cite{sahu2022github}. Finally we process all YAML files into CSV, separately for Gini coefficient and Lorenz curve, and compare the results.
-
-\input{src/fig-de-gini}
-\input{src/fig-de-lorenz-all}
-
-
 \subsubsection{Results}
 
 Results, shown in Figures \ref{fig:de-gini} and \ref{fig:de-lorenz-all}, indicate that web graphs in general (except \verb|web-NotreDame|) have high Gini coefficient (i.e., high inequality) along with a social network \verb|soc-Epinions1|, and a citation network \verb|cit-Patents|. Road networks are observed to have the lowest Gini coefficient (i.e., low inequality) among all graph classes. If we take a look at the average Lorenz curve of all graphs, we observe that $50\%$ of popularity (ranks) is owned by $\approx20\%$ of the vertices. However, on the web-Stanford graph $50\%$ of popularity is owned by only $\approx3\%$ of vertices, and on the \verb|arabic-2005| (another web graph) is owned by only $\approx1\%$ of the vertices. This would be a significantly worrying level of inequality if each vertex represented a unique person. However, it is possible that many low-ranked pages are low-effort ones and thus have a high page-to-person ratio.
